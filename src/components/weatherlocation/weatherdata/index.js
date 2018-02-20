@@ -9,11 +9,13 @@ import {
   SUNNY_DAY,
   SUN,
   WINDY
-} from '../constants/weatherConst';
+} from '../../../constants/weatherConst';
+
+import './styles.css';
 
 
 const WeatherData=()=>(
-  <div>
+  <div className="weatherDataCont">
     <WeatherTemperature temperature={20} weatherState={WINDY}></WeatherTemperature>
     <WeatherExtraInfo humidity={80} wind={'10m/s'}></WeatherExtraInfo>
   </div>

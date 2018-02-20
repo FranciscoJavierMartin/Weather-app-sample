@@ -1,5 +1,7 @@
 import React from 'react';
 import WeatherIcons from 'react-weathericons';
+import PropTypes from 'prop-types';
+
 import {
         CLOUD,
         CLOUDY,
@@ -8,7 +10,9 @@ import {
         SUNNY_DAY,
         SUN,
         WINDY
-      } from '../constants/weatherConst';
+      } from '../../../constants/weatherConst';
+
+import './styles.css';
 
 function stateToIcon(weatherState){
 
@@ -39,14 +43,20 @@ function stateToIcon(weatherState){
 }
 
 const getWeatherIcon=(weatherState)=>{
-  return (<WeatherIcons name={stateToIcon(weatherState)} size="2x"/>);
+  return (<WeatherIcons className="wicon" name={stateToIcon(weatherState)} size="4x"/>);
 }
 
 const WeatherTemperature=({temperature, weatherState})=>(
-  <div>
+  <div className="weatherTemperatureCont">
     {getWeatherIcon(weatherState)}
-    <span>{`${temperature} ºC`}</span>
+    <span className="temperature" >{`${temperature}`}</span>
+    <span className="temperatureSymbol">ºC</span>
   </div>
 );
+
+WeatherTemperature.prototype={
+  temperature: PropTypes.number.isRequired,
+  weatherState: PropTypes.string,
+};
 
 export default WeatherTemperature;
