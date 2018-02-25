@@ -28,7 +28,7 @@ const WeatherData=({data})=>{
 };
 
 WeatherData.prototype={
-  data:PropTypes.shape({
+    data:PropTypes.shape({
     temperature:PropTypes.number.isRequired,
     weatherState:PropTypes.string.isRequired,
     humidity:PropTypes.number.isRequired,

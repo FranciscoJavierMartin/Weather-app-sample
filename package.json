@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://franciscojaviermartin.github.io/weather-app-sample",
   "dependencies": {
+    "convert-units": "^2.3.4",
     "gh-pages": "^1.1.0",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
