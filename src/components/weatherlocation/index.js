@@ -42,18 +42,22 @@ class WeatherLocation extends Component{
     this.loadData();
   }
 
-  render=()=>(
-    <div className="weatherLocationCont">
+  render=()=>{
+
+    const {onWeatherLocationClick}=this.props;
+
+    return (<div className="weatherLocationCont" onClick={onWeatherLocationClick}>
       <Location city={this.state.city}></Location>
       {this.state.data ? 
           <WeatherData data={this.state.data}></WeatherData>:
           <CircularProgress size={60} thickness={7} />}
     </div>
-  );
+  )};
 }
 
 WeatherLocation.PropTypes={
   city:PropTypes.string,
+  onWeatherLocationClick:PropTypes.func,
 }
 
 export default WeatherLocation;
