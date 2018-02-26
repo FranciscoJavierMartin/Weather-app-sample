@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import WeatherData from './weatherdata';
-import tra from '../../services/transformWeather';
+import CircularProgress from 'material-ui/CircularProgress';
 import Location from './Location';
 
 import './styles.css';
@@ -41,7 +41,9 @@ class WeatherLocation extends Component{
   render=()=>(
     <div className="weatherLocationCont">
       <Location city={this.state.city}></Location>
-      {this.state.data ? <WeatherData data={this.state.data}></WeatherData>:'Cargando...'}
+      {this.state.data ? 
+          <WeatherData data={this.state.data}></WeatherData>:
+          <CircularProgress size={60} thickness={7} />}
     </div>
   );
 }
