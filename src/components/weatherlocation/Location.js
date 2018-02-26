@@ -14,7 +14,7 @@ const Location= ({city}) =>{
   );
 };
 
-Location.prototype={
+Location.PropTypes={
   city:PropTypes.string.isRequired,
 };
 

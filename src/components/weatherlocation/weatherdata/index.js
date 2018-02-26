@@ -27,7 +27,7 @@ const WeatherData=({data})=>{
   ;
 };
 
-WeatherData.prototype={
+WeatherData.PropTypes={
     data:PropTypes.shape({
     temperature:PropTypes.number.isRequired,
     weatherState:PropTypes.string.isRequired,

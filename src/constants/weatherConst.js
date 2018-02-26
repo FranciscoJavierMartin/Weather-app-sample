@@ -5,3 +5,5 @@ export const RAIN="rain";
 export const SNOW="snow";
 export const WINDY="windy";
 export const SUNNY_DAY="day-sunny";
+export const THUNDER="thunder";
+export const DRIZZLE="drizzle";

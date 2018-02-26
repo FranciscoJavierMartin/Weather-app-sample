@@ -9,3 +9,8 @@
   background: #eee;
   border-radius: 5px;
 }
+
+.LocationCont h1{
+  font: bold;
+  font-size: 20pt;
+}

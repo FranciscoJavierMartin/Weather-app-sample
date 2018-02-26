@@ -9,7 +9,7 @@ const WeatherExtraInfo=({humidity,wind})=>(
   </div>
 );
 
-WeatherExtraInfo.prototype={
+WeatherExtraInfo.PropTypes={
   humidity:PropTypes.number.isRequired,
   wind:PropTypes.string.isRequired,
 };

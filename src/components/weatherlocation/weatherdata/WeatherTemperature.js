@@ -9,7 +9,9 @@ import {
         SNOW,
         SUNNY_DAY,
         SUN,
-        WINDY
+        WINDY,
+        THUNDER,
+        DRIZZLE
       } from '../../../constants/weatherConst';
 
 import './styles.css';
@@ -23,7 +25,7 @@ function stateToIcon(weatherState){
     case CLOUD:
       res="cloud";
       break;
-      case CLOUDY:
+    case CLOUDY:
       res="cloudy";
       break;
     case RAIN:
@@ -34,6 +36,15 @@ function stateToIcon(weatherState){
       break;
     case WINDY:
       res="windy";
+      break;
+    case THUNDER:
+      res="day-thunderstorm";
+      break;
+    case DRIZZLE:
+      res="day-showers";
+      break;
+    case SUN:
+      res="day-sunny";
       break;
     default:
       res="day-sunny";
@@ -54,7 +65,7 @@ const WeatherTemperature=({temperature, weatherState})=>(
   </div>
 );
 
-WeatherTemperature.prototype={
+WeatherTemperature.PropTypes={
   temperature: PropTypes.number.isRequired,
   weatherState: PropTypes.string,
 };
