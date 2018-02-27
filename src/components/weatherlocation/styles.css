@@ -1,5 +1,10 @@
 .weatherLocationCont{
-  width: 400px;
+  width: calc(100%-20px);
+  padding: 15px;
+  box-sizing: border-box;
+  min-width: 400px;
+  margin-left: 10px;
+  margin-right: 10px;
   box-shadow: 10px 10px 42px -12px;
 }
 
@@ -13,4 +18,16 @@
 .LocationCont h1{
   font: bold;
   font-size: 20pt;
+}
+
+.locationList{
+  
+}
+
+@media (max-width: 48pm){
+  .locationList{
+    max-height: 30vh;
+    overflow: auto;
+    margin-bottom: 20px;
+  }
 }

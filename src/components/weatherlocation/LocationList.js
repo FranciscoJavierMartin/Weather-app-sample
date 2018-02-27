@@ -19,7 +19,7 @@ const LocationList=({cities,onSelectedLocation})=>{
   );
 
   return (
-  <div>
+  <div className="locationList">
     {strToComponent(cities)}
   </div>);
 }
