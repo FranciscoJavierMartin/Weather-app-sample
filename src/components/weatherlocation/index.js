@@ -55,7 +55,7 @@ class WeatherLocation extends Component{
   )};
 }
 
-WeatherLocation.PropTypes={
+WeatherLocation.propTypes={
   city:PropTypes.string,
   onWeatherLocationClick:PropTypes.func,
 }

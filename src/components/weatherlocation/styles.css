@@ -6,6 +6,7 @@
   margin-left: 10px;
   margin-right: 10px;
   box-shadow: 10px 10px 42px -12px;
+  cursor: pointer;
 }
 
 .LocationCont{
@@ -20,14 +21,20 @@
   font-size: 20pt;
 }
 
+.forecast-title{
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
 .locationList{
-  
+  overflow: auto;
+  height: 85vh;
 }
 
 @media (max-width: 48pm){
   .locationList{
-    max-height: 30vh;
-    overflow: auto;
+    max-height: 40vh;
     margin-bottom: 20px;
   }
 }

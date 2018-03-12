@@ -24,7 +24,7 @@ const LocationList=({cities,onSelectedLocation})=>{
   </div>);
 }
 
-LocationList.PropTypes={
+LocationList.propTypes={
   cities:PropTypes.array.isRequired,
   onSelectedLocation:PropTypes.func,
 }
