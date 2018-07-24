@@ -5,13 +5,6 @@ import transformForecast from '../../services/transformForecast';
 
 import './styles.css';
 
-const data={
-  temperature:10,
-  humidity:10,
-  weatherState:'normal',
-  wind:'normal',
-}
-
 const days=[
   'Lunes',
   'Martes',

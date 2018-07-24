@@ -1,36 +1,30 @@
 import React, { Component } from 'react';
-import {Grid,Row,Col} from 'react-flexbox-grid';
-import {createStore} from 'redux';
+import { Grid, Row, Col } from 'react-flexbox-grid';
+import { createStore } from 'redux';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Paper from 'material-ui/Paper';
 import AppBar from 'material-ui/AppBar';
-import LocationList from './components/weatherlocation/LocationList';
-import ForecastExtended from './components/weatherlocation/ForecastExtended';
+import ForecastExtendedContainer from './containers/ForecastExtendedContainer';
+import LocationListContainer from './containers/LocationListContainer';
+import { setCity } from './actions';
 
 import './App.css';
 
-const cities=[
+const cities = [
   'Malaga,es',
   'Buenos Aires,ar',
   'Madrid,es',
 ];
 
-const store=createStore(()=>{},window.__REDUX_DEVTOOLS_EXTENSION && window.__REDUX_DEVTOOLS_EXTENSION());
-
 class App extends Component {
 
-  constructor(){
+  constructor() {
     super();
-    this.state={city:null};
-  }
-
-  handleSelectionLocation=city=>{
-    this.setState({city});
-    store.dispatch({type:'setCity',value:city});
+    this.state = { city: null };
   }
 
   render() {
-    const {city} = this.state;
+    const { city } = this.state;
 
     return (
       <MuiThemeProvider>
@@ -38,17 +32,13 @@ class App extends Component {
         <Grid>
           <Row>
             <Col xs={12} md={6}>
-              <LocationList 
-                cities={cities}
-                onSelectedLocation={this.handleSelectionLocation}>
-              </LocationList>
+              <LocationListContainer cities={cities}>
+              </LocationListContainer>
             </Col>
             <Col xs={12} md={6}>
               <Paper zDepth={4}>
                 <div className="detail">
-                  { city &&
-                    <ForecastExtended city={city}></ForecastExtended>
-                  }
+                    <ForecastExtendedContainer></ForecastExtendedContainer>
                 </div>
               </Paper>
             </Col>
