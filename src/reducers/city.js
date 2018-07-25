@@ -5,7 +5,7 @@ export const city = (state = {}, action) => {
 
     switch (action.type) {
         case SET_CITY:
-            res = { ...state, city: action.payload }
+            res =  action.payload;
             break;
         default:
             res = state;
