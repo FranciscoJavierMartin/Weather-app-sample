@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 
 import './styles.css';
 
-//Hace uso de destructuring para extraer
-// la propiedad city del objeto props de react
 const Location= ({city}) =>{
 
   return (

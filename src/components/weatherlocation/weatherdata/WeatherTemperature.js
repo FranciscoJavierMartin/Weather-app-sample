@@ -7,7 +7,6 @@ import {
         CLOUDY,
         RAIN,
         SNOW,
-        SUNNY_DAY,
         SUN,
         WINDY,
         THUNDER,
@@ -61,7 +60,7 @@ const WeatherTemperature=({temperature, weatherState})=>(
   <div className="weatherTemperatureCont">
     {getWeatherIcon(weatherState)}
     <span className="temperature" >{`${temperature}`}</span>
-    <span className="temperatureSymbol">ºC</span>
+    <span className="temperaturetype">ºC</span>
   </div>
 );
 

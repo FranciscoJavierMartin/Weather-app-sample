@@ -1,40 +1,24 @@
-.weatherLocationCont{
-  width: calc(100%-20px);
-  padding: 15px;
-  box-sizing: border-box;
-  min-width: 400px;
-  margin-left: 10px;
-  margin-right: 10px;
-  box-shadow: 10px 10px 42px -12px;
-  cursor: pointer;
+
+.weatherLocationCont {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: calc(100% - 20px);
+    min-width: 430px;
+    padding: 25px;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 10px 10px 42px -12px rgba(0,0,0,0.75);   
+    cursor: pointer; 
 }
 
-.LocationCont{
-  width: 100%;
-  height: 35px;
-  background: #eee;
-  border-radius: 5px;
+.LocationCont {
+    width: 100%;
+    height: 35px;
+    text-align: left;
+    color: #888;
+    line-height: 35px;
 }
 
-.LocationCont h1{
-  font: bold;
-  font-size: 20pt;
-}
-
-.forecast-title{
-  text-align: center;
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-
-.locationList{
-  overflow: auto;
-  height: 85vh;
-}
-
-@media (max-width: 48pm){
-  .locationList{
-    max-height: 40vh;
-    margin-bottom: 20px;
-  }
+.LocationCont h1 {
+    margin: 0;
 }

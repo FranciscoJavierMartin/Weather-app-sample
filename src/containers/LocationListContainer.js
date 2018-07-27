@@ -1,31 +1,48 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
-import {setCity, setSelectedCity} from '../actions';
-import {LocationList} from '../components/weatherlocation';
+import { connect } from 'react-redux';
+import * as actions from './../actions';
+import { getWeatherCities, getCity } from '../reducers';
+import LocationList from './../components/LocationList';
 
 class LocationListContainer extends Component {
 
-    handleSelectedLocation=city=>{
-        this.props.setCity(city);
+    componentDidMount() {
+
+        const { setWeather, setSelectedCity, cities, city } = this.props;
+
+        setWeather(cities);
+
+        setSelectedCity(city);
+    }
+
+    handleSelectedLocation = city => {
+        this.props.setSelectedCity(city);
     }
 
     render() {
         return (
-            <LocationList cities = { this.props.cities }
-                onSelectedLocation = { this.handleSelectedLocation } >
+            <LocationList cities={this.props.citiesWeather}
+                onSelectedLocation={this.handleSelectedLocation} >
             </LocationList >
         );
     }
 }
 
 LocationListContainer.propTypes = {
-    setCity: PropTypes.func.isRequired,
+    setSelectedCity: PropTypes.func.isRequired,
+    setWeather: PropTypes.func.isRequired,
     cities: PropTypes.array.isRequired,
+    citiesWeather: PropTypes.array,
+    city: PropTypes.string.isRequired,
 };
 
-const mapDispatcherToProps = dispatch => ({
-    setCity: value => dispatch(setSelectedCity(value))
+const mapDispatcherToProps = dispatch => bindActionCreators(actions, dispatch);
+
+const mapStateToProps = state => ({
+    citiesWeather: getWeatherCities(state),
+    city: getCity(state)
 });
 
-export default connect(null,mapDispatcherToProps)(LocationListContainer);
+export default connect(mapStateToProps, mapDispatcherToProps)(LocationListContainer);
