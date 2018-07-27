@@ -2,7 +2,7 @@
 ***This project was made to learn to use some React basic topics.***
 
 # Capture
-![Main](http)
+![Main](https://github.com/FranciscoJavierMartin/Weather-app-sample/blob/master/docs/main.png)
 
 # Installation & usage
 
